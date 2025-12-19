@@ -13,14 +13,14 @@ export default function Main() {
       const timeout = setTimeout(() => {
         setDisplayText((prev) => prev + text[index]);
         setIndex((prev) => prev + 1);
-      }, 30); // typing speed
+      }, 50); // typing speed
 
       return () => clearTimeout(timeout);
     }
   }, [index]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Effect */}
       <div className="absolute inset-0">
         <GridScan
@@ -44,12 +44,12 @@ export default function Main() {
         style={{ fontFamily: "Inconsolata" }}
       >
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-          <span className="text-yellow-400"> <mark>OffJson</mark> </span>
+          <span className="text-yellow-400"> <mark > {"{offJson/}"} </mark> </span>
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl mb-8 max-w-xl sm:max-w-2xl min-h-[4rem]">
-          {displayText}
-          <span className="animate-pulse">|</span>
+          {"{"} {displayText}  
+          <span className="animate-pulse">|</span> {"}"}
         </p>
 
         <a
