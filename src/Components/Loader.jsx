@@ -2,14 +2,23 @@ import React from "react";
 
 export default function Loader() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black text-white">
-      <div className="flex flex-col items-center gap-4">
-        <div className="w-12 h-12 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin"></div>
+    <div className="min-h-screen flex items-center justify-center bg-black text-[#F9E400]">
+      <div className="flex flex-col items-center gap-6">
+        
+        {/* Animated bars */}
+        <div className="flex gap-2">
+          <span className="w-2 h-8 bg-[#F9E400] animate-pulse delay-0"></span>
+          <span className="w-2 h-12 bg-[#F9E400] animate-pulse delay-150"></span>
+          <span className="w-2 h-6 bg-[#F9E400] animate-pulse delay-300"></span>
+          <span className="w-2 h-10 bg-[#F9E400] animate-pulse delay-500"></span>
+        </div>
+
+        {/* Text */}
         <p
-          className="text-lg tracking-widest"
+          className="text-sm tracking-[0.3em] uppercase"
           style={{ fontFamily: "Inconsolata" }}
         >
-          loading offJson...
+          initializing offjson
         </p>
       </div>
     </div>
