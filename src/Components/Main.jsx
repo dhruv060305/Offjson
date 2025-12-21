@@ -40,7 +40,7 @@ export default function Main() {
         <GridScan
           sensitivity={0.55}
           lineThickness={1}
-          linesColor="#392e4e"
+          linesColor="#7C00FE"
           gridScale={0.1}
           scanColor="#F9E400"
           scanOpacity={0.4}
@@ -107,7 +107,7 @@ function MappedHoverChar({ char }) {
     <span
       onMouseEnter={() => setDisplay(replacement)}
       onMouseLeave={() => setDisplay(char)}
-      className=" hover:text-white"
+      className=" hover:text-[#7C00FE]"
     >
       {display}
     </span>

@@ -1,5 +1,6 @@
 import React from "react";
 import LetterGlitch from "../effects/LetterGlitch";
+import GradientText from "../effects/GradientText";
 
 export default function About() {
   return (
@@ -14,6 +15,8 @@ export default function About() {
         outerVignette={false}
         smooth={true}
       />
+
+      
     </section>
   );
 }
