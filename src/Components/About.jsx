@@ -117,23 +117,25 @@ export default function About() {
             onMouseLeave={() => setActiveItem(null)}
           >
             <h3 className="text-xl tracking-widest cursor-pointer hover:text-[#F9E400] transition">
-              Mission
+              Mission:
             </h3>
 
             <div
-              className={`overflow-hidden transition-all duration-500 ${
-                activeItem === 0 ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+              className={`overflow-hidden transition-all ml-5 duration-500 ${
+                activeItem === 0 ? "max-h-40 opacity-100" : "max-h-0  opacity-0"
               }`}
             >
-              <p className="mt-4 text-gray-300 leading-relaxed tracking-wide">
+              {"{"}
+              <p className="ml-8 text-gray-300 leading-relaxed tracking-wide">
                 {useTypewriter(
-                  "Building immersive, high-performance web experiences with modern UI and clean architecture.",
+                  " Building immersive, high-performance web experiences with modern UI and clean architecture.",
                   activeItem === 0
                 )}
                 {activeItem === 0 && (
                   <span className="animate-pulse text-[#F9E400]">|</span>
                 )}
               </p>
+              {"}"}
             </div>
           </div>
 
@@ -144,15 +146,15 @@ export default function About() {
             onMouseLeave={() => setActiveItem(null)}
           >
             <h3 className="text-xl tracking-widest cursor-pointer hover:text-[#F9E400] transition">
-              Vision
+              Vision:
             </h3>
 
             <div
-              className={`overflow-hidden transition-all duration-500 ${
+              className={`overflow-hidden transition-all ml-5 duration-500 ${
                 activeItem === 1 ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
               }`}
             >
-              <p className="mt-4 text-gray-300 leading-relaxed tracking-wide">
+             {"{"} <p className="ml-8 text-gray-300 leading-relaxed tracking-wide">
                 {useTypewriter(
                   "Redefining how developers interact with structured data through powerful and intuitive visualization tools.",
                   activeItem === 1
@@ -160,7 +162,7 @@ export default function About() {
                 {activeItem === 1 && (
                   <span className="animate-pulse text-[#F9E400]">|</span>
                 )}
-              </p>
+              </p>{"}"}
             </div>
           </div>
 
@@ -171,15 +173,15 @@ export default function About() {
             onMouseLeave={() => setActiveItem(null)}
           >
             <h3 className="text-xl tracking-widest cursor-pointer hover:text-[#F9E400] transition">
-              Values
+              Values:
             </h3>
 
             <div
-              className={`overflow-hidden transition-all duration-500 ${
+              className={`overflow-hidden transition-all ml-5 duration-500 ${
                 activeItem === 2 ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
               }`}
             >
-              <p className="mt-4 text-gray-300 leading-relaxed tracking-wide">
+             {"{"} <p className="ml-8 text-gray-300 leading-relaxed tracking-wide">
                 {useTypewriter(
                   "Innovation, integrity, and excellence in every line of code we write.",
                   activeItem === 2
@@ -187,7 +189,7 @@ export default function About() {
                 {activeItem === 2 && (
                   <span className="animate-pulse text-[#F9E400]">|</span>
                 )}
-              </p>
+              </p>{"}"}
             </div>
           </div>
         </div>
