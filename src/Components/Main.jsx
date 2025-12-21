@@ -4,7 +4,7 @@ import { GridScan } from "../effects/GridScan";
 const text =
   "Explore a world of JSON data like never before. Dive in to discover, visualize, and interact with structured information seamlessly.";
 
-// Brand text
+// Brand text (include / here)
 const brand = "{offJson/}";
 
 // Fixed replacement mapping
@@ -12,7 +12,7 @@ const charMap = {
   o: "#",
   f: "$",
   J: "@",
-  s: "%",
+  s: "%", 
   n: "!",
   "/": "\\",
 };
@@ -35,7 +35,7 @@ export default function Main() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* GridScan Background */}
+      {/* Background */}
       <div className="absolute inset-0">
         <GridScan
           sensitivity={0.55}
@@ -66,7 +66,7 @@ export default function Main() {
           </span>
         </h1>
 
-        {/* Typewriter Text */}
+        {/* Typewriter text */}
         <p className="text-base sm:text-lg md:text-xl tracking-wide mb-8 max-w-2xl mx-auto min-h-[4rem]">
           {"{ "}
           {displayText}
@@ -74,20 +74,20 @@ export default function Main() {
           {" }"}
         </p>
 
-        {/* Buttons */}
-        <div className="flex gap-3 items-center justify-center">
+        {/* Button */}
+        <div className="flex gap-2 items-center justify-center ">
           <a
             href="#explore"
-            className="bg-[#F9E400] text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-white transition"
+            className="bg-[#F9E400] text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#7C00FE] hover:text-white "
           >
             Explore Now
           </a>
 
           <a
             href="#explore"
-            className="bg-transparent border-2 border-[#F9E400] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-black transition"
+            className="bg-transparent border-2 border-[#7C00FE] backdrop-blur-md text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-[#7C00FE] transition"
           >
-            Learn More
+            Explore Now
           </a>
         </div>
       </div>
@@ -96,7 +96,7 @@ export default function Main() {
 }
 
 /* ===============================
-   Hover Character Component
+   Fixed Hover Character Component
 ================================ */
 
 function MappedHoverChar({ char }) {
@@ -107,7 +107,7 @@ function MappedHoverChar({ char }) {
     <span
       onMouseEnter={() => setDisplay(replacement)}
       onMouseLeave={() => setDisplay(char)}
-      className="cursor-pointer transition-colors duration-150 hover:text-white"
+      className=" hover:text-white"
     >
       {display}
     </span>
