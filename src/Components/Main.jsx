@@ -87,7 +87,7 @@ export default function Main() {
             href="#explore"
             className="bg-transparent border-2 border-[#7C00FE] hover:border-0 backdrop-blur-md text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-[#7C00FE] "
           >
-            Explore Now
+            get in touch
           </a>
         </div>
       </div>
