@@ -34,13 +34,13 @@ export default function Main() {
   }, [index]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <GridScan
           sensitivity={0.55}
           lineThickness={1}
-          linesColor="#7C00FE"
+          linesColor="#000000"
           gridScale={0.1}
           scanColor="#F9E400"
           scanOpacity={0.4}
@@ -58,7 +58,7 @@ export default function Main() {
         style={{ fontFamily: "BBH Bogle" }}
       >
         {/* Brand */}
-        <h1 className="text-4xl sm:text-5xl md:text-9xl font-bold mb-4 tracking-widest">
+        <h1 className="text-4xl sm:text-5xl md:text-[200px] font-bold mb-4 tracking-widest">
           <span className="text-[#F9E400] flex gap-1 select-none justify-center">
             {brand.split("").map((char, i) => (
               <MappedHoverChar key={i} char={char} />
@@ -85,7 +85,7 @@ export default function Main() {
 
           <a
             href="#explore"
-            className="bg-transparent border-2 border-[#7C00FE] backdrop-blur-md text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-[#7C00FE] transition"
+            className="bg-transparent border-2 border-[#7C00FE] hover:border-0 backdrop-blur-md text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-[#7C00FE] "
           >
             Explore Now
           </a>
