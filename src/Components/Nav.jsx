@@ -13,7 +13,7 @@ export default function Nav() {
   const navLinks = [
     { label: 'Home', href: '#home', color: 'bg-pink-500' },
     { label: 'About', href: '#about', color: 'bg-[#CC66DA]' },
-    { label: 'Projects', href: '#projects', color: 'bg-[#9929EA]' },
+    { label: 'Meet Our Team', href: '#team', color: 'bg-[#9929EA]' },
     { label: 'Contact', href: '#contact', color: 'bg-[#FAEB92]' },
   ];
 

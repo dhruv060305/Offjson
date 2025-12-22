@@ -5,6 +5,7 @@ import Main from "./Components/Main.jsx";
 import About from "./Components/About.jsx";
 import Loader from "./Components/Loader.jsx";
 
+
 function App() {
   const [loading, setLoading] = useState(true);
   const audioRef = useRef(null);
@@ -35,6 +36,7 @@ function App() {
       <Nav />
       <Main />
       <About />
+      
       <audio ref={audioRef} src="/audio/music.mp3" loop />
     </>
   );
