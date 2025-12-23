@@ -75,7 +75,7 @@ export default function Main() {
         </p>
 
         {/* Button */}
-        <div className="flex gap-2 items-center justify-center ">
+        <div className="flex gap-2 items-center tracking-wider justify-center ">
           <a
             href="#explore"
             className="bg-[#F9E400] text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#7C00FE] hover:text-white "

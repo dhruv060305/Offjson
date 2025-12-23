@@ -4,6 +4,7 @@ import Nav from "./Components/Nav.jsx";
 import Main from "./Components/Main.jsx";
 import About from "./Components/About.jsx";
 import Loader from "./Components/Loader.jsx";
+import Clients from "./Components/Clients.jsx";
 
 
 function App() {
@@ -36,7 +37,7 @@ function App() {
       <Nav />
       <Main />
       <About />
-      
+      <Clients />
       <audio ref={audioRef} src="/audio/music.mp3" loop />
     </>
   );

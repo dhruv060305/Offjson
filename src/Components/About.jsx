@@ -208,23 +208,24 @@ export default function About() {
         </div>
 
         {/* RIGHT SIDE — PORTRAIT IMAGE */}
-        <div className="flex items-center justify-center">
+        <div className="sm:flex items-center justify-center hidden">
           <div
             className="
               relative
-              w-[320px] sm:w-[380px]
-              h-[480px] sm:h-[540px]
+              w-[650px] sm:w-[520px]
+              h-[600px] sm:h-[480px]
               rounded-2xl
               overflow-hidden
               bg-white/10
               backdrop-blur-md
               shadow-2xl
+              
             "
           >
             <img
               src="src/assets/team.jpeg"
               alt="Portrait"
-              className="w-full h-full object-center grayscale hover:grayscale-0 "
+              className="w-full h-full object-cover grayscale hover:grayscale-0 "
             />
           </div>
         </div>
