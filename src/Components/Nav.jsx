@@ -1,79 +1,97 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 
-// Nav.jsx
 export default function Nav() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : '';
-    document.documentElement.style.scrollBehavior = 'smooth'; // ✅ enables smooth scroll
+    document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
 
   const navLinks = [
-    { label: 'Home', href: '#home', color: 'bg-pink-500' },
-    { label: 'About', href: '#about', color: 'bg-[#CC66DA]' },
-    { label: 'Meet Our Team', href: '#team', color: 'bg-[#9929EA]' },
-    { label: 'Contact', href: '#contact', color: 'bg-[#FAEB92]' },
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Meet Our Team", href: "#team" },
+    { label: "Contact", href: "#contact" },
   ];
 
   return (
-    <nav className="bg-black text-white" style={{ fontFamily: 'Cal Sans' }}>
-      <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-        <div className="text-2xl font-bold">
-          <mark>offJson</mark>
-        </div>
+    <>
+      {/* NAVBAR */}
+      <nav
+        className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-md text-white"
+        style={{ fontFamily: "BBH Bogle" }}
+      >
+        <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+          <span className="text-2xl font-bold">offJson</span>
 
-        {/* Desktop Nav */}
-        <ul className="hidden sm:flex gap-6 text-lg">
-          {navLinks.map((link, index) => (
-            <li key={index}>
-              <a href={link.href}>
-                <mark className={`hover:bg-yellow-400 ${link.color} transition`}>{link.label}</mark>
-              </a>
-            </li>
-          ))}
-        </ul>
+          {/* Desktop Nav */}
+          <ul className="hidden sm:flex gap-6 text-lg">
+            {navLinks.map((link, i) => (
+              <li key={i}>
+                <a
+                  href={link.href}
+                  className="px-3 py-1 rounded-md hover:bg-white hover:text-[#7C00FE] transition"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-        {/* Mobile Nav Button */}
-        <div className="sm:hidden">
-          <button onClick={() => setOpen(true)}>
+          {/* Mobile Menu Button */}
+          <button className="sm:hidden" onClick={() => setOpen(true)}>
             <Menu size={28} />
           </button>
         </div>
-      </div>
+      </nav>
 
-      {/* Mobile Menu */}
+      {/* 🟣 COLOR PANEL (70%) */}
       <div
-        className={`fixed top-0 left-0 h-full w-4/5 bg-[#1A1A1D] text-white z-50 transform transition-transform duration-300 ease-in-out ${
-          open ? 'translate-x-0' : '-translate-x-full'
-        } sm:hidden`}
-      >
-        <div className="flex justify-between items-center p-4 border-b border-gray-700">
-          <mark className="text-xl font-bold">Menu</mark>
-          <button onClick={() => setOpen(false)}>
-            <X size={24} />
-          </button>
-        </div>
+        className={`
+          fixed top-0 left-0 h-full w-[70%] z-40 bg-[#7C00FE]
+          transition-transform duration-300 ease-out
+          ${open ? "translate-x-0" : "-translate-x-full"}
+        `}
+      />
 
-        <ul className="flex flex-col gap-6 p-4 text-lg">
-          {navLinks.map((link, index) => (
-            <li key={index} onClick={() => setOpen(false)}>
-              <a href={link.href}>
-                <mark className={`hover:bg-yellow-400 ${link.color} transition`}>{link.label}</mark>
-              </a>
-            </li>
-          ))}
-        </ul>
+      {/* ⚫ NAV PANEL (70%) */}
+      <div
+        className={`
+          fixed top-0 left-0 h-full w-[70%] z-50 bg-black
+          flex flex-col items-center justify-center gap-8
+          text-2xl text-white
+          transition-transform duration-500 ease-out delay-150
+          ${open ? "translate-x-0" : "-translate-x-full"}
+        `}
+      >
+        {/* Close Button */}
+        <button
+          className="absolute top-6 right-6"
+          onClick={() => setOpen(false)}
+        >
+          <X size={32} />
+        </button>
+
+        {navLinks.map((link, i) => (
+          <a
+            key={i}
+            href={link.href}
+            onClick={() => setOpen(false)}
+            className="hover:text-[#7C00FE] transition"
+          >
+            {link.label}
+          </a>
+        ))}
       </div>
 
-      {/* Overlay */}
+      {/* 👉 RIGHT SIDE CLICK AREA (30%) */}
       {open && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 sm:hidden"
+          className="fixed top-0 right-0 h-full w-[30%] z-30"
           onClick={() => setOpen(false)}
-        ></div>
+        />
       )}
-    </nav>
+    </>
   );
 }

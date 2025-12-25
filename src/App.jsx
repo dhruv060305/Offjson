@@ -5,7 +5,7 @@ import Main from "./Components/Main.jsx";
 import About from "./Components/About.jsx";
 import Loader from "./Components/Loader.jsx";
 import Clients from "./Components/Clients.jsx";
-import NavWrapper from "./Components/NavWrapper.jsx";
+
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -34,12 +34,12 @@ function App() {
 
   return (
     <>
-      <div className="relative">
-        <NavWrapper />
+      
+        <Nav />
         <Main />
         <About />
         <Clients />
-      </div>
+      
       <audio ref={audioRef} src="/audio/music.mp3" loop />
     </>
   );

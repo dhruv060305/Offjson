@@ -34,9 +34,9 @@ export default function Main() {
   }, [index]);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
       {/* Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         <GridScan
           sensitivity={0.55}
           lineThickness={1}
@@ -54,11 +54,11 @@ export default function Main() {
 
       {/* Content */}
       <div
-        className="relative z-10 text-center text-white px-4"
+        className="relative z-10 text-center text-white px-4 flex flex-col items-center"
         style={{ fontFamily: "BBH Bogle" }}
       >
         {/* Brand */}
-        <h1 className="text-4xl sm:text-5xl md:text-[200px] font-bold mb-4 tracking-widest">
+        <h1 className="text-4xl sm:text-5xl md:text-[200px] font-bold mb-4 tracking-widest leading-none">
           <span className="text-[#F9E400] flex gap-1 select-none justify-center">
             {brand.split("").map((char, i) => (
               <MappedHoverChar key={i} char={char} />
