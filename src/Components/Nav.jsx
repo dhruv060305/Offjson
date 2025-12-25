@@ -78,7 +78,8 @@ export default function Nav() {
             key={i}
             href={link.href}
             onClick={() => setOpen(false)}
-            className="hover:text-[#7C00FE] transition"
+            style={{ fontFamily: "BBH Bogle" }}
+            className="hover:text-[#7C00FE] tracking-wide transition"
           >
             {link.label}
           </a>
@@ -88,7 +89,8 @@ export default function Nav() {
       {/* 👉 RIGHT SIDE CLICK AREA (30%) */}
       {open && (
         <div
-          className="fixed top-0 right-0 h-full w-[30%] z-30"
+          className="fixed top-0 right-0 h-full w-[30%] z-30 "
+
           onClick={() => setOpen(false)}
         />
       )}
