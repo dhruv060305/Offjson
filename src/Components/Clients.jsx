@@ -6,7 +6,7 @@ const teamData = [
   {
     id: 1,
     name: "Athrava Pathak",
-    role: "AI/ML Engineer",
+    role: "Founder & AI Developer",
     skills: ["Python", "TensorFlow", "UI/UX"],
   },
   {
@@ -24,7 +24,7 @@ const teamData = [
   {
     id: 4,
     name: "Dhruv Taraviya",
-    role: "Full Stack Developer",
+    role: "Co-Founder",
     skills: ["MongoDB", "React", "Node.js"],
   },
 ];
@@ -32,6 +32,7 @@ const teamData = [
 export default function Clients() {
   return (
     <section
+    id="team"
       className="relative w-full min-h-screen overflow-hidden"
       style={{ fontFamily: "BBH Bogle" }}
     >

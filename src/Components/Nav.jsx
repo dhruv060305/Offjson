@@ -18,7 +18,7 @@ export default function Nav() {
   ];
 
   return (
-    <nav className="bg-black sticky top-0 text-white z-50" style={{ fontFamily: 'Cal Sans' }}>
+    <nav className="bg-black text-white" style={{ fontFamily: 'Cal Sans' }}>
       <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
         <div className="text-2xl font-bold">
           <mark>offJson</mark>
