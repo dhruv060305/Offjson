@@ -18,7 +18,10 @@ export default function Nav() {
   return (
     <>
       {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-md text-white">
+      <nav
+        className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-md text-white"
+        style={{ fontFamily: "BBH Bogle" }}
+      >
         <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
           <span className="text-2xl font-bold">offJson</span>
 
@@ -52,6 +55,7 @@ export default function Nav() {
 
       {/* ⚫ NAV PANEL */}
       <div
+        style={{ fontFamily: "BBH Bogle" }}
         className={`
           fixed top-0 left-0 h-full w-[70%] z-50 bg-black
           flex flex-col items-center justify-center gap-8
