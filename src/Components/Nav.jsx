@@ -18,14 +18,10 @@ export default function Nav() {
   return (
     <>
       {/* NAVBAR */}
-      <nav
-        className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-md text-white"
-        style={{ fontFamily: "BBH Bogle" }}
-      >
+      <nav className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-md text-white">
         <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
           <span className="text-2xl font-bold">offJson</span>
 
-          {/* Desktop Nav */}
           <ul className="hidden sm:flex gap-6 text-lg">
             {navLinks.map((link, i) => (
               <li key={i}>
@@ -39,33 +35,31 @@ export default function Nav() {
             ))}
           </ul>
 
-          {/* Mobile Menu Button */}
           <button className="sm:hidden" onClick={() => setOpen(true)}>
             <Menu size={28} />
           </button>
         </div>
       </nav>
 
-      {/* 🟣 COLOR PANEL (70%) */}
+      {/* 🟣 PURPLE PANEL */}
       <div
         className={`
           fixed top-0 left-0 h-full w-[70%] z-40 bg-[#7C00FE]
           transition-transform duration-300 ease-out
-          ${open ? "translate-x-0" : "-translate-x-full"}
+          ${open ? "translate-x-0 delay-0" : "-translate-x-full delay-200"}
         `}
       />
 
-      {/* ⚫ NAV PANEL (70%) */}
+      {/* ⚫ NAV PANEL */}
       <div
         className={`
           fixed top-0 left-0 h-full w-[70%] z-50 bg-black
           flex flex-col items-center justify-center gap-8
           text-2xl text-white
-          transition-transform duration-500 ease-out delay-150
-          ${open ? "translate-x-0" : "-translate-x-full"}
+          transition-transform duration-300 ease-out
+          ${open ? "translate-x-0 delay-200" : "-translate-x-full delay-0"}
         `}
       >
-        {/* Close Button */}
         <button
           className="absolute top-6 right-6"
           onClick={() => setOpen(false)}
@@ -78,19 +72,17 @@ export default function Nav() {
             key={i}
             href={link.href}
             onClick={() => setOpen(false)}
-            style={{ fontFamily: "BBH Bogle" }}
-            className="hover:text-[#7C00FE] tracking-wide transition"
+            className="hover:text-[#7C00FE] transition"
           >
             {link.label}
           </a>
         ))}
       </div>
 
-      {/* 👉 RIGHT SIDE CLICK AREA (30%) */}
+      {/* RIGHT SIDE CLICK AREA */}
       {open && (
         <div
-          className="fixed top-0 right-0 h-full w-[30%] z-30 "
-
+          className="fixed top-0 right-0 h-full w-[30%] z-30"
           onClick={() => setOpen(false)}
         />
       )}
