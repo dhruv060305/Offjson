@@ -6,7 +6,7 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename='/OffJson/'>
+    <BrowserRouter basename='/Offjson/'>
       <App />
     </BrowserRouter>
   </StrictMode>,
