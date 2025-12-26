@@ -5,7 +5,8 @@ import Main from "./Components/Main.jsx";
 import About from "./Components/About.jsx";
 import Loader from "./Components/Loader.jsx";
 import Clients from "./Components/Clients.jsx";
-
+import Services from "./Components/Services.jsx"; 
+import music from "./assets/music.mp3";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -39,8 +40,9 @@ function App() {
         <Main />
         <About />
         <Clients />
+        <Services />
       
-      <audio ref={audioRef} src="/audio/music.mp3" loop />
+      <audio ref={audioRef} src={music} loop />
     </>
   );
 }

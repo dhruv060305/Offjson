@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import LetterGlitch from "../effects/LetterGlitch";
-
+import bg from "../assets/team.jpeg";
 /* 🔹 Typewriter Hook */
 function useTypewriter(text, active, speed = 10) {
   const [output, setOutput] = useState("");
@@ -223,7 +223,7 @@ export default function About() {
             "
           >
             <img
-              src="src/assets/team.jpeg"
+              src={bg}
               alt="Portrait"
               className="w-full h-full object-cover grayscale hover:grayscale-0 "
             />
