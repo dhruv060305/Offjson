@@ -6,7 +6,8 @@ const teamData = [
   {
     id: 1,
     name: "Athrava Pathak",
-    role: "Founder & AI Developer",
+    role: "AI/ML Developer",
+    Designation: "Founder",
     skills: ["Python", "TensorFlow", "UI/UX"],
   },
   {
@@ -24,7 +25,8 @@ const teamData = [
   {
     id: 4,
     name: "Dhruv Taraviya",
-    role: "Co-Founder",
+    role: "Full Stack Developer",
+    Designation: "Co-Founder",
     skills: ["MongoDB", "React", "Node.js"],
   },
 ];

@@ -34,7 +34,7 @@ export default function Main() {
   }, [index]);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
+    <section id="home" className="relative min-h-screen bg-black  flex items-center justify-center overflow-hidden pt-24">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <GridScan
