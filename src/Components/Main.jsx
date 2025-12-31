@@ -36,8 +36,8 @@ export default function Main() {
   return (
     <section id="home" className="relative min-h-screen bg-black  flex items-center justify-center overflow-hidden pt-24">
       {/* Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <GridScan
+      <div className="absolute inset-0 pointer-events-none ">
+        {/* <GridScan
           sensitivity={0.55}
           lineThickness={1}
           linesColor="#000000"
@@ -49,7 +49,7 @@ export default function Main() {
           chromaticAberration={0.002}
           noiseIntensity={0.01}
           className="bg-black w-full h-full"
-        />
+        /> */}
       </div>
 
       {/* Content */}
@@ -59,7 +59,7 @@ export default function Main() {
       >
         {/* Brand */}
         <h1 className="text-4xl sm:text-5xl md:text-[200px] font-bold mb-4 tracking-widest leading-none">
-          <span className="text-[#F9E400] flex gap-1 select-none justify-center">
+          <span className="text-[rgb(249,228,0)] flex gap-1 select-none justify-center">
             {brand.split("").map((char, i) => (
               <MappedHoverChar key={i} char={char} />
             ))}
@@ -85,7 +85,7 @@ export default function Main() {
 
           <a
             href="#explore"
-            className="bg-transparent border-2 border-[#7C00FE] hover:border-0 backdrop-blur-md text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-[#7C00FE] "
+            className="bg-transparent border-2 border-[#7c00fe] hover:border-0 backdrop-blur-md text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-[#7C00FE] "
           >
             get in touch
           </a>

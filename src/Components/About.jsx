@@ -97,7 +97,7 @@ export default function About() {
           {/* 🔠 TYPEWRITER H1 */}
           <h1
             ref={headingRef}
-            className="text-5xl sm:text-6xl md:text-9xl font-bold tracking-widest"
+            className="text-5xl sm:text-6xl md:text-9xl  font-bold tracking-widest"
             style={{ fontFamily: "BBH Bogle" }}
           >
             {"{"} {displayHeading}
@@ -132,7 +132,7 @@ export default function About() {
                 {"{"}
                 <p className="ml-8 text-gray-300 leading-relaxed tracking-wide">
                   {useTypewriter(
-                    " Building immersive, high-performance web experiences with modern UI and clean architecture.",
+                    " We turn operations into software. Offjson builds structured websites, smart dashboards, and AI agents. These tools automate marketing, sales, and execution. As a result, teams can grow without adding complexity.",
                     activeItem === 0
                   )}
                   {activeItem === 0 && (
@@ -163,7 +163,7 @@ export default function About() {
                 {"{"}
                 <p className="ml-8 text-gray-300 leading-relaxed tracking-wide">
                   {useTypewriter(
-                    "Redefining how developers interact with structured data through powerful and intuitive visualization tools.",
+                    "Businesses should manage themselves. We’re creating a future where systems take over busywork. Growth will come from leverage, not effort.",
                     activeItem === 1
                   )}
                   {activeItem === 1 && (
@@ -194,7 +194,9 @@ export default function About() {
                 {"{"}
                 <p className="ml-8 text-gray-300 leading-relaxed tracking-wide">
                   {useTypewriter(
-                    "Innovation, integrity, and excellence in every line of code we write.",
+                    "Systems over effort. We replace manual work with organized workflows that can grow. Automation by default - If a process can run without people, it should.Execution over noise - We deliver, measure, and improve based on real results.Built to scale - Everything we create is made to grow without falling apart.Built to scale - Everything we create is made to grow without falling apart." ,   
+
+
                     activeItem === 2
                   )}
                   {activeItem === 2 && (
