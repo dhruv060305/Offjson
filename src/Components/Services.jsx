@@ -1,111 +1,133 @@
-import React, { useState } from "react";
-import { Code, Palette, Smartphone } from "lucide-react";
-import bgImage from "../assets/Gemini_Generated_Image_xkvfzgxkvfzgxkvf.png";
+import React, { useState, useRef } from "react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 
 const services = [
   {
     title: "Web Development",
+    subtitle: "Build. Scale. Dominate.",
     description:
-      "We build business-ready websites with powerful admin dashboards that give owners complete control, automation, and growth insights.",
-    icon: <Code size={26} />,
+      "We engineer fast, scalable websites and platforms with full ownership, automation, and performance baked in.",
   },
   {
-    title: "Ai Automation",
+    title: "AI Automation",
+    subtitle: "Systems that work while you sleep.",
     description:
-      "Command Your Growth. Automated Intelligence at Your Fingertips.",
-    icon: <Palette size={26} />,
+      "We design AI-powered workflows that remove repetitive work, increase efficiency, and scale operations automatically.",
   },
   {
-    title: "AI Automated Advertising & Marketing",
+    title: "AI Advertising & Marketing",
+    subtitle: "Precision over guesswork.",
     description:
-      "We don’t guess marketing strategies — we reverse engineer what already works using AI.",
-    icon: <Smartphone size={26} />,
+      "Using AI, we analyze what already converts and amplify it with data-driven advertising strategies.",
   },
 ];
 
 export default function Services() {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [slide, setSlide] = useState(0);
+  const totalSlides = services.length + 1;
+  const sliderRef = useRef(null);
 
-  const handleClick = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
+  // Swipe detection
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
   };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const distance = touchStartX.current - touchEndX.current;
+    if (distance > 50) next(); // swipe left
+    else if (distance < -50) prev(); // swipe right
+  };
+
+  const next = () => slide < totalSlides - 1 && setSlide(slide + 1);
+  const prev = () => slide > 0 && setSlide(slide - 1);
 
   return (
     <section
       id="services"
-      className="relative w-full min-h-screen bg-black text-white py-24 overflow-hidden"
+      className="w-full min-h-screen bg-black text-white overflow-hidden"
       style={{ fontFamily: "BBH Bogle" }}
     >
-      <div className="relative z-10 max-w-full mx-auto px-0">
-        {/* Heading */}
-        <div className="text-center mb-24 px-6">
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Our <span className="text-[#7C00FE]">Services</span>
-          </h2>
-          <p className="text-gray-400 mt-4 max-w-xl mx-auto">
-            We build digital products that are fast, modern and user-friendly.
-          </p>
+      <div
+        ref={sliderRef}
+        className="flex transition-transform duration-700 ease-[cubic-bezier(.77,0,.18,1)]"
+        style={{
+          width: `${totalSlides * 100}%`,
+          transform: `translateX(-${slide * (100 / totalSlides)}%)`,
+        }}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        {/* -------- INTRO SLIDE -------- */}
+        <div className="w-full min-h-screen flex items-center px-6 md:px-24">
+          <div className="max-w-2xl  md:text-left">
+            <span className="text-sm tracking-widest text-[#7C00FE]">
+              OUR CAPABILITIES
+            </span>
+            <h2 className="mt-6 text-5xl md:text-7xl font-bold leading-tight">
+              Services <br /> that <br />
+              <span className="text-[#7C00FE]">move fast</span>
+            </h2>
+            <p className="mt-6 text-gray-400 text-lg max-w-lg mx-auto md:mx-0">
+              We don’t offer features. We build systems designed to grow with
+              your business.
+            </p>
+            <button
+              onClick={next}
+              className="mt-8 flex items-center gap-2 text-[#7C00FE] text-lg hover:gap-4 transition-all"
+            >
+              Start Exploring <ArrowRight size={20} />
+            </button>
+          </div>
         </div>
 
-        {/* Services */}
-        <div className="w-full">
-          {services.map((service, index) => {
-            const isActive = activeIndex === index;
+        {/* -------- SERVICE SLIDES -------- */}
+        {services.map((service, index) => (
+          <div
+            key={index}
+            className="w-full min-h-screen flex flex-col md:flex-row items-center px-6 md:px-24 py-12"
+          >
+            {/* LEFT (desktop) / TOP (mobile) */}
+            <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left mb-8 md:mb-0">
+              <h3 className="text-4xl md:text-6xl font-bold mb-4">
+                {service.title}
+              </h3>
+              <p className="text-[#7C00FE] text-lg md:text-xl mb-4">
+                {service.subtitle}
+              </p>
+            </div>
 
-            return (
-              <div
-                key={index}
-                onMouseEnter={() =>
-                  window.innerWidth >= 768 && setActiveIndex(index)
-                }
-                onMouseLeave={() =>
-                  window.innerWidth >= 768 && setActiveIndex(null)
-                }
-                onClick={() => handleClick(index)}
-                className="group relative w-full cursor-pointer border-t border-white/10 overflow-hidden"
-              >
-                {/* Background Image for bar only */}
-                <div
-                  className={`absolute inset-0 bg-center bg-cover transition-opacity duration-300 ${
-                    isActive ? "opacity-100" : "opacity-0"
-                  }`}
-                  style={{ backgroundImage: `url(${bgImage})`, zIndex: 0 }}
-                />
+            {/* RIGHT (desktop) / BOTTOM (mobile) */}
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <p className="text-gray-400 text-lg leading-relaxed max-w-lg mx-auto md:mx-0">
+                {service.description}
+              </p>
 
-                {/* Main Bar */}
-                <div
-                  className={`relative flex flex-col items-center justify-center gap-4
-                    w-full  h-24 transition-all duration-300 ease-out
-                    ${isActive ? "h-56 md:h-44" : ""} bg-black/70 group-hover:bg-transparent
-                    px-6 md:px-0
-                  `}
+              {/* Nav */}
+              <div className="mt-8 flex justify-center md:justify-start items-center gap-6">
+                <button
+                  onClick={prev}
+                  className="flex items-center gap-2 text-gray-400 hover:text-white transition"
                 >
-                  {/* Logo and Title side by side */}
-                  <div className="flex items-center gap-4 mt-4 z-10">
-                    <div className="text-[#F9E400]">{service.icon}</div>
-                    <h3 className="text-2xl  md:text-3xl font-medium">{service.title}</h3>
-                  </div>
-
-                  {/* Description below */}
-                  <p
-                    className={`text-[#F5004F] text-sm md:text-base z-10 text-center mt-2 transition-all duration-300 ${
-                      isActive ? "opacity-100 max-h-40" : "opacity-0 max-h-0"
-                    }`}
-                  >
-                    {service.description}
-                  </p>
-                </div>
-
-                {/* Accent Line */}
-                <span
-                  className={`absolute bottom-0 left-0 h-[2px] bg-[#F9E400] transition-all duration-300 z-10 ${
-                    isActive ? "w-full" : "w-0"
-                  }`}
-                />
+                  <ArrowLeft size={18} /> Back
+                </button>
+                <button
+                  onClick={next}
+                  className="flex items-center gap-2 text-[#7C00FE] hover:gap-4 transition-all"
+                >
+                  Next <ArrowRight size={18} />
+                </button>
               </div>
-            );
-          })}
-        </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

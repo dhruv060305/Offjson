@@ -33,6 +33,7 @@ export default function About() {
 
   const headingRef = useRef(null);
 
+  
   /* 👀 Observe heading */
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -132,7 +133,7 @@ export default function About() {
                 {"{"}
                 <p className="ml-8 text-gray-300 leading-relaxed tracking-wide">
                   {useTypewriter(
-                    " We turn operations into software. Offjson builds structured websites, smart dashboards, and AI agents. These tools automate marketing, sales, and execution. As a result, teams can grow without adding complexity.",
+                    "   We turn operations into software. Offjson builds structured websites, smart dashboards, and AI agents. These tools automate marketing, sales, and execution. As a result, teams can grow without adding complexity.",
                     activeItem === 0
                   )}
                   {activeItem === 0 && (
@@ -163,7 +164,7 @@ export default function About() {
                 {"{"}
                 <p className="ml-8 text-gray-300 leading-relaxed tracking-wide">
                   {useTypewriter(
-                    "Businesses should manage themselves. We’re creating a future where systems take over busywork. Growth will come from leverage, not effort.",
+                    "    Businesses should manage themselves. We’re creating a future where systems take over busywork. Growth will come from leverage, not effort.",
                     activeItem === 1
                   )}
                   {activeItem === 1 && (
@@ -194,8 +195,7 @@ export default function About() {
                 {"{"}
                 <p className="ml-8 text-gray-300 leading-relaxed tracking-wide">
                   {useTypewriter(
-                    "Systems over effort. We replace manual work with organized workflows that can grow. Automation by default - If a process can run without people, it should.Execution over noise - We deliver, measure, and improve based on real results.Built to scale - Everything we create is made to grow without falling apart.Built to scale - Everything we create is made to grow without falling apart." ,   
-
+                    "    Systems over effort. We replace manual work with organized workflows that are designed to grow. Automation by default—if a process can run without people, it should. Execution over noise—we focus on delivering, measuring, and improving based on real results instead of empty hype. ",
 
                     activeItem === 2
                   )}

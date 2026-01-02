@@ -20,14 +20,14 @@ const teamData = [
     id: 2,
     name: "Rajeshwari Meti",
     // role: "Web Designer",
-    Designation: "Co-Founder",
+    Designation: "Social Media Manager",
     image: rajeshwari,
   },
   {
     id: 3,
     name: "Sanika Jagapat",
     // role: "Product Designer",
-    Designation: "Social Media Manager",
+    Designation: "Product and Sales Manager",
     image: sanika,
   },
   {
