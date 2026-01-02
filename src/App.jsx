@@ -7,6 +7,7 @@ import Loader from "./Components/Loader.jsx";
 import Clients from "./Components/Clients.jsx";
 import Services from "./Components/Services.jsx";
 import Footer from "./Components/Footer.jsx"; 
+import Contact from "./Components/Contact.jsx";
 import music from "./assets/music.mp3";
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <About />
         <Clients />
         <Services />
+        <Contact />
         <Footer />
       
       <audio ref={audioRef} src={music} loop />
