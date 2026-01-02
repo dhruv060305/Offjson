@@ -39,7 +39,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-screen bg-black flex items-center justify-center px-4">
+    <section id="contact" className="min-h-screen bg-black flex items-center justify-center px-4">
       <div className="max-w-xl w-full bg-[#0a0a0a] p-8 rounded-2xl shadow-[0_0_30px_rgba(124,0,254,0.3)]">
 
         {/* Heading */}

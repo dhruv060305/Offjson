@@ -77,14 +77,14 @@ export default function Main() {
         {/* Button */}
         <div className="flex gap-2 items-center tracking-wider justify-center ">
           <a
-            href="#explore"
+            href="#services"
             className="bg-[#F9E400] text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#7C00FE] hover:text-white "
           >
             Explore Now
           </a>
 
           <a
-            href="#explore"
+            href="#contact"
             className="bg-transparent border-2 border-[#7c00fe] hover:border-0 backdrop-blur-md text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-[#7C00FE] "
           >
             get in touch
