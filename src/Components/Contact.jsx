@@ -39,7 +39,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen bg-black flex items-center justify-center px-4">
+    <section id="contact" style={{ fontFamily: "BBH Bogle" }} className="min-h-screen bg-black flex items-center justify-center px-4">
       <div className="max-w-xl w-full bg-[#0a0a0a] p-8 rounded-2xl shadow-[0_0_30px_rgba(124,0,254,0.3)]">
 
         {/* Heading */}
@@ -111,9 +111,9 @@ const Contact = () => {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="w-full py-3 rounded-lg font-semibold text-black
-                       bg-gradient-to-r from-[#7C00FE] via-[#FF2D2D] to-[#F9E400]
-                       hover:opacity-90 transition duration-300
+            className="w-full py-3 rounded-lg font-semibold text-white
+                       bg-transprent border-2 border-[#7C00FE]
+                       hover:border-0 hover:text-[#7C00FE] tracking-wider hover:bg-white
                        disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {status === "loading" ? "Sending..." : "Send Message"}
